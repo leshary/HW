@@ -4,10 +4,17 @@ using namespace std;
 
 int strange_multiply(int a, int b)
 {
-    int c = 0;
-    for (int i = 0; i < b; i++)
-        c=c+a;
-    return c;
+    if (b==1)
+        return a;
+    if (a==1)
+        return b;
+    else{
+        if (b%2==0)
+           return strange_multiply( a, b/2) * 2;
+        else
+           return strange_multiply( a, b/2) * 2 + a;
+     }
+        ;
 }
 int main()
 {
